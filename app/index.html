@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="keeebTest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<title>Keeeb Test</title>	
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">	
+</head>
+
+<body ng-controller = "dataCrtl">
+
+<div class="container">
+  <h3>Group Table Form Project : {{parms.projectId}}</h3>
+  <p>The following table shows all groups wich belongs to the page <strong>{{parms.pageId}}</strong> located in the current project</p>
+
+  <button class="btn btn-success" ng-click="classifyGroups()" ng-hide="endProcess"> Clasify Group by Mbs Language</button> 
+
+  <button class="btn btn-info" ng-click="classifyPage()" ng-show="endProcess">Laguages General View</button>
+  
+  <div ng-show="finalResults"><br>
+    <p>The following list shows all the languages that were found in the mbs and how ofen they were found</p>
+    <span class="bg-info" ng-repeat="resume in resumeLanguagesPage | orderBy:'-frecuency'"> {{resume.language}} : {{resume.frecuency}},</span></div>
+  <table class="table text-center">
+    <thead>
+      <tr>
+        <th class="text-center"> Group Id</th>
+        <th class="text-center">Type</th>
+        <th class="text-center">mbs</th>
+        <th ng-show="endProcess" class="text-center">Languajes in mbs</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="group in groups">
+        <td>{{group.id}}</td>
+        <td>{{group.title}}</td>
+        <td>{{group.mbs.length}}</td>
+        <td ng-show="endProcess">{{group.counting}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+	
+</body>
+
+
+
+
+<script src="../node_modules/angular/angular.js"></script>
+<script src="../node_modules/angular-resource/angular-resource.js"></script>
+<script src="../node_modules/guesslanguage/lib/_languageData.js"></script>
+<script src="../node_modules/guesslanguage/lib/guessLanguage.js"></script>
+<script src="../node_modules/underscore/underscore.js"></script>
+<script src="services.js"></script>
+<script src="app.js"></script>
+<!-- endbuild -->
+
+</html>
+
