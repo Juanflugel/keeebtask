@@ -13,3 +13,5 @@ Interface explanation:
   - then the green botton desappear and a blue botton appears, when this one is clicked will show the languages general view for the current page.
 
 >- To check the solution clone this repository and npm install
+>- node server
+>- go to localhost:6001/app
