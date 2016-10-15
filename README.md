@@ -10,4 +10,6 @@ To write the solution for this problem I used Angular js Framework and the follo
 
 Interface explanation:
   - There is one green botton that will show all languages detected in each group
-  - then the green botton desapear and a blue botton apears, when this one is clicked will show the languages general view for the current page.
+  - then the green botton desappear and a blue botton appears, when this one is clicked will show the languages general view for the current page.
+
+>- To check the solution clone this repository and npm install
